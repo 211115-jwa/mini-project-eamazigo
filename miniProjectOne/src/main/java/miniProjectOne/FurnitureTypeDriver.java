@@ -17,8 +17,8 @@ public class FurnitureTypeDriver {
 				app.post("/furnituretypes", ctx -> {
 					// our information is going to be coming in as "form parameters"
 					FurnitureType furnituretype = new FurnitureType();
-					furnituretype.TypeOfFurniture = ctx.formParam("Type of furniture");
-					furnituretype.Color = ctx.formParam("Color");
+					furnituretype.TypeOfFurniture = ctx.formParam("typeoffurniture");
+					furnituretype.Color = ctx.formParam("color");
 					
 					furnituretypes[currentIndex] = furnituretype;
 					currentIndex++;
@@ -28,7 +28,7 @@ public class FurnitureTypeDriver {
 					for (FurnitureType eachFurnitureType : furnituretypes) {
 						System.out.println(eachFurnitureType);
 						if (eachFurnitureType != null) {
-							responseText += eachFurnitureType.TypeOfFurniture + "<br>";
+							responseText += eachFurnitureType.Color + " " + eachFurnitureType.TypeOfFurniture +  "<br>";
 						}
 					}
 					
